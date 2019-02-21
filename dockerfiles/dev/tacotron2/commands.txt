@@ -1,0 +1,25 @@
+#### Launching tacotron2 docker image ###############################
+$ docker run \
+-it \
+--runtime=nvidia \
+-p 8888:8888 \
+--volume /media/aivengers/models:/usr/src/app \
+dock/tacotron2:runtime \
+/bin/bash
+
+#### Launching jupyter-notebook #####################################
+& jupyter-notebook --ip 0.0.0.0 --no-browser --allow-root
+
+#### Get jupyter-notebook display ###################################
+
+Browser launched on container :
+tape http://localhost:8888
+
+Browser launched on host server :
+tape http://<container ip seen from host server>:8888
+
+Browser launched on container :
+tape http://<host ip>:8888
+
+
+
